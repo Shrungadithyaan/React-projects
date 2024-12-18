@@ -4,6 +4,14 @@ import { CORE_CONCEPTS  } from './data.js';
 import TabButton from './components/TabButton.jsx';
 
 function App() {
+  let tabContant = "please click a button";
+  function handleSelect(selectedButton){
+    // selectedButton => 'components','jsx','props','state'
+    tabContant = selectedButton;
+    console.log(tabContant);
+}
+
+console.log("app component executing");
   return (
     <div>
       <Header />
@@ -21,13 +29,14 @@ function App() {
         <section id='examples'>
           <h2>Example</h2>
           <menu>
-              <TabButton>Components</TabButton>
+              <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
               {/* <TabButton label="Components"></TabButton> */}
-              <TabButton>JSX</TabButton>
-              <TabButton>Props</TabButton>
-              <TabButton>State</TabButton>
+              <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+              <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+              <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
 
           </menu>
+          {tabContant}
         </section>
         <h2>Time to get started!</h2>
       </main>
