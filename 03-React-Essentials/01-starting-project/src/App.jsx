@@ -29,6 +29,7 @@ function App() {
       </div>
     );
   }
+  
   return (
     <div>
       <Header />
@@ -42,7 +43,7 @@ function App() {
             ))}
           </ul>
         </section>
-        
+
         <section id="examples">
           <h2>Examples</h2>
           <menu>
